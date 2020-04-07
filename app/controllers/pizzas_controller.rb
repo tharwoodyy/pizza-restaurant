@@ -11,6 +11,6 @@ class PizzasController < ApplicationController
   private
 
   def car_params
-    params.require(:pizza).permit(:name, :description, :price)
+    params.require(:pizza).permit(:name, :description, :price, :photo)
   end
 end

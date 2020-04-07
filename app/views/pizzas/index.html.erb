@@ -1,5 +1,17 @@
-<ul>
-  <% @pizzas.each do |pizza| %>
-    <li><%= pizza.name %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="pizza-grid">
+    <% @pizzas.each do |pizza| %>
+      <% if pizza.photo.attached? %>
+        <%= link_to pizza_path(pizza), class: 'pizza-card' do %>
+          <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pizza.photo.key, height: 300, width: 400, crop: :fill %>')">
+            <li><%= pizza.name %></li>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="links">
+  <button type="button" class="btn btn-link">
+  <%= link_to 'Back', root_path %>
+</div>

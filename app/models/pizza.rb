@@ -1,4 +1,4 @@
 class Pizza < ApplicationRecord
-  has_many :bookings, dependent: :destroy
-
+  has_one_attached :photo
+  has_many :orders, dependent: :destroy
 end

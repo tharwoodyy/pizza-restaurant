@@ -1,3 +1,12 @@
 <h2><%= @pizza.name %></h2>
 <p><%= @pizza.description %></p>
 <p><%= @pizza.price %></p>
+
+<div class="links">
+<button type="button" class="btn btn-link">
+<%= link_to 'Back', pizzas_path %>
+</button>
+<button type="button" class="btn btn-link">
+<%#= link_to 'Order Pizza', new_pizza_order_path(@pizza) %>
+</button>
+</div>
