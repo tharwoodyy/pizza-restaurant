@@ -1,5 +1,5 @@
 .navbar-lewagon {
-  justify-content: space-between;
+  justify-content: center;
   background: white;
 }
 
@@ -9,4 +9,27 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.nav-item {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    margin: 5px 0 0;
+    border-radius: 3px;
+    transition-duration: .3s;
+    opacity: 1;
+  }
+}
+
+.nav-item:hover {
+  &:after {
+    width: 100%;
+    background-color: #FFCE00;;
+  }
 }

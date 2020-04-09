@@ -1,10 +1,20 @@
+<div class="index-banner">
+    <h1><strong>PIZZA</strong></h1>
+    <h4>We use only the best tomatoes from San Marzano for our delicious base,</h4>
+    <h4>and our other ingredients are locally sourced from the surrounding area.</h4>
+    <h4>Menu changes seasonally.</h4>
+</div>
+
 <div class="container">
   <div class="pizza-grid">
     <% @pizzas.each do |pizza| %>
       <% if pizza.photo.attached? %>
-        <%= link_to pizza_path(pizza), class: 'pizza-card' do %>
+        <%= link_to pizza_path(pizza), class: 'pizza-card', style:"text-decoration: none;" do %>
           <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pizza.photo.key, height: 300, width: 400, crop: :fill %>')">
-            <li><%= pizza.name %></li>
+            <div class="card-list">
+              <li><%= pizza.name %></li>
+              <li><%= pizza.price %></li>
+            </div>
           </div>
         <% end %>
       <% end %>
@@ -12,6 +22,5 @@
   </div>
 </div>
 <div class="links">
-  <button type="button" class="btn btn-link">
-  <%= link_to 'Back', root_path %>
+  <%= link_to 'Back', root_path, class: "btn btn-dark" %>
 </div>

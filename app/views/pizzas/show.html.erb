@@ -1,12 +1,14 @@
-<h2><%= @pizza.name %></h2>
-<p><%= @pizza.description %></p>
-<p><%= @pizza.price %></p>
-
+<div class="show-container">
+  <div class="show-col-left">
+    <h2><%= @pizza.name %></h2>
+    <p><%= @pizza.description %></p>
+    <p><%= @pizza.price %></p>
+  </div>
+  <div class="show-col-right">
+    <%= cl_image_tag @pizza.photo.key, class: "show-img" %>
+  </div>
+</div>
 <div class="links">
-<button type="button" class="btn btn-link">
-<%= link_to 'Back', pizzas_path %>
-</button>
-<button type="button" class="btn btn-link">
-<%#= link_to 'Order Pizza', new_pizza_order_path(@pizza) %>
-</button>
+  <%= link_to 'Back', pizzas_path, class: "btn btn-dark" %>
+  <%= link_to 'Order Pizza', pizzas_path, class: "btn btn-dark" %>
 </div>

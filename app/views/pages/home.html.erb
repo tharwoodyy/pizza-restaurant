@@ -1,2 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="logo-container">
+    <%= image_tag "tlogo.png" %>
+    <div class="home-button">
+      <%= link_to "Menu", pizzas_path, class: "btn btn-dark" %>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <%= image_tag "pizza2.jpg", class: "content-container-img" %>
+    <div class="content-container-info-top">
+      <%= image_tag "wine.jpg", class: "content-container-info-top-img" %>
+      <div class="info-button-top">
+        <h2>Wines</h2>
+        <p>We skip the middle-man and source our wines directly from small Italian producers,</p>
+        <p>making them more delicious and more affordable for you.</p>
+        <%= link_to "Wine List", "#", class: "btn btn-dark" %>
+      </div>
+    </div>
+    <div class="content-container-info-middle">
+      <div class="info-button-middle">
+        <h2>Craft Beers</h2>
+        <p>Our local range is sourced from down the road in Witney, and like our wines, we also</p>
+        <p>have hand selected beers from Italian producers too.</p>
+        <%= link_to "Beer Menu", "#", class: "btn btn-dark" %>
+      </div>
+      <%= image_tag "beer2.jpg", class: "content-container-info-middle-img" %>
+    </div>
+  </div>
+</div>
