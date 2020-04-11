@@ -10,7 +10,7 @@ class PizzasController < ApplicationController
 
   private
 
-  def car_params
+  def pizza_params
     params.require(:pizza).permit(:name, :description, :price, :photo)
   end
 end
