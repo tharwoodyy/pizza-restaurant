@@ -1,4 +1,6 @@
 class PizzasController < ApplicationController
+  # before_action :find_pizza, only: [:show, :edit, :update, :destroy]
+  # before_action :check_owner_access, only: [:update, :destroy]
 
   def index
     @pizzas = Pizza.all

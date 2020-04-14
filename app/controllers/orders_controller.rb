@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :check_order_access, only: [:edit, :update, :destroy]
+  # before_action :check_order_access, only: [:edit, :update, :destroy]
 
   def new
     @order = Order.new
@@ -12,12 +12,17 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def show
+    @order = Order.find(params[:id])
+    @user = @order.user
+    @pizza = @order.pizza
+  end
+
   def create
     @order = Order.new(order_params)
     @pizza = Pizza.find(params[:pizza_id])
     @order.pizza = @pizza
     @order.user = current_user
-    # redirect_to pizza_path(@pizza) if @pizza.user == current_user
     if @order.save!
       redirect_to pizza_path(@pizza)
     else

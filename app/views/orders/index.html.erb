@@ -2,7 +2,7 @@
 
 <div class="container">
   <ul class="list-group">
-    <% current_user.orders.each do |order| %>
+    <% @orders.each do |order| %>
       <li class="list-group-item">
         <img <%= image_tag order.pizza.photo, class: "order-pizza-photo" %>>
         <div class="card-product-infos">
