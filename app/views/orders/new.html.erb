@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Order this Pizza</h1>
+
+  <%= simple_form_for [@pizza, @order] do |f| %>
+  <%= f.input :quantity, html5: true %>
+  <%= f.submit "Order" %>
+  <% end %>
+</div>

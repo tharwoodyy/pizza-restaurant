@@ -1,0 +1,19 @@
+<h1>Your Order</h1>
+
+<div class="container">
+  <ul class="list-group">
+    <% current_user.orders.each do |order| %>
+      <li class="list-group-item">
+        <img <%= image_tag order.pizza.photo, class: "order-pizza-photo" %>>
+        <div class="card-product-infos">
+          <h2><%= order.pizza.name %></h2>
+          <p><%= order.quantity %></p>
+          <p><%= order.pizza.price %></p>
+        </div>
+      </li>
+    <% end %>
+    <div class="links">
+      <%= link_to 'Back', root_path, class: "btn btn-dark" %>
+    </div>
+  </ul>
+</div>
