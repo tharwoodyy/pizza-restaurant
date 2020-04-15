@@ -11,13 +11,13 @@
           <div class="card-product-infos">
             <h2><%= order.pizza.name %></h2>
             <p>Quantity: <%= order.quantity %></p>
-            <p>Price: <%= order.pizza.price %></p>
+            <p>Price: £<%= order.pizza.price %></p>
           </div>
         </li>
       <% end %>
     </ul>
     <h3>Total Quantity: <%= @orders.map { |order| 1 * order.quantity }.sum %> </h3>
-    <h3>Total Price: <%= @orders.map { |order | order.pizza.price }.sum %> </h3>
+    <h3>Total Price: £<%= @orders.map { |order | 1 * order.pizza.price.to_i }.sum %> </h3>
     <div class="links">
       <%= link_to 'Back', root_path, class: "btn btn-dark" %>
     </div>

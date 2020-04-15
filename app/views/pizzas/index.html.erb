@@ -13,7 +13,7 @@
           <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path pizza.photo.key, height: 300, width: 400, crop: :fill %>')">
             <div class="card-list">
               <li><%= pizza.name %></li>
-              <li><%= pizza.price %></li>
+              <li>£<%= pizza.price %></li>
             </div>
           </div>
         <% end %>
