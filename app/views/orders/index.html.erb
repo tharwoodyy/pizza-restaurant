@@ -1,19 +1,27 @@
-<h1>Your Order</h1>
+<div class="index-banner">
+  <h1>Your Order</h1>
+</div>
 
 <div class="container">
-  <ul class="list-group">
-    <% @orders.each do |order| %>
-      <li class="list-group-item">
-        <img <%= image_tag order.pizza.photo, class: "order-pizza-photo" %>>
-        <div class="card-product-infos">
-          <h2><%= order.pizza.name %></h2>
-          <p><%= order.quantity %></p>
-          <p><%= order.pizza.price %></p>
-        </div>
-      </li>
+  <div class="order-container">
+    <ul class="pizza-grid">
+      <% @orders.each do |order| %>
+        <li class="pizza-card">
+          <img <%= image_tag order.pizza.photo, class: "order-pizza-photo" %>
+          <div class="card-product-infos">
+            <h2><%= order.pizza.name %></h2>
+            <p>Quantity: <%= order.quantity %></p>
+            <p>Price: <%= order.pizza.price %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <%= @orders.each do |order| %>
+      <h3>Total Quantity: <%= order.quantity %> </h3>
+      <h3>Total Price:  </h3>
     <% end %>
     <div class="links">
       <%= link_to 'Back', root_path, class: "btn btn-dark" %>
     </div>
-  </ul>
+  </div>
 </div>
