@@ -16,10 +16,8 @@
         </li>
       <% end %>
     </ul>
-    <%= @orders.each do |order| %>
-      <h3>Total Quantity: <%= order.quantity %> </h3>
-      <h3>Total Price:  </h3>
-    <% end %>
+    <h3>Total Quantity: <%= @orders.map { |order| 1 * order.quantity }.sum %> </h3>
+    <h3>Total Price: <%= @orders.map { |order | order.pizza.price }.sum %> </h3>
     <div class="links">
       <%= link_to 'Back', root_path, class: "btn btn-dark" %>
     </div>
