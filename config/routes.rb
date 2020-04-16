@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :orders, only: [:create, :new, :index, :show, :destroy]
   end
   resources :orders, only: [:index, :destroy]
+
   root to: 'pages#home'
 end

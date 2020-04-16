@@ -7,19 +7,25 @@
     <ul class="pizza-grid">
       <% @orders.each do |order| %>
         <li class="pizza-card">
-          <img <%= image_tag order.pizza.photo, class: "order-pizza-photo" %>
+          <img <%= image_tag order.pizza.photo, class: "card-img" %>
           <div class="card-product-infos">
             <h2><%= order.pizza.name %></h2>
             <p>Quantity: <%= order.quantity %></p>
             <p>Price: £<%= order.pizza.price %></p>
+            <%= link_to order_path(order), method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
           </div>
         </li>
       <% end %>
     </ul>
-    <h3>Total Quantity: <%= @orders.map { |order| 1 * order.quantity }.sum %> </h3>
-    <h3>Total Price: £<%= @orders.map { |order | 1 * order.pizza.price.to_i }.sum %> </h3>
+    <div class="totals">
+      <h3>Total Quantity: <%= @orders.map { |order| 1 * order.quantity }.sum %> </h3>
+      <h3>Total Price: £<%= @orders.map { |order | 1 * order.pizza.price.to_i }.sum %> </h3>
+      <%= link_to "Place Order", "#", class: "btn btn-dark" %>
+    </div>
     <div class="links">
-      <%= link_to 'Back', root_path, class: "btn btn-dark" %>
+      <%= link_to 'Back', pizzas_path, class: "btn btn-dark" %>
     </div>
   </div>
 </div>

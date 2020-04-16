@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  # before_action :check_order_access, only: [:edit, :update, :destroy]
+  before_action only: [:edit, :update, :destroy]
 
   def new
     @order = Order.new
