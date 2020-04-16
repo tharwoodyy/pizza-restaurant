@@ -7,9 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Pizza.destroy_all
+Topping.destroy_all
 User.destroy_all
 
 user = User.create!(email: 'tom@gmail.com', password: 'test1234')
+
+Topping.create(name: 'Pepperoni')
+Topping.create(name: 'Chillies')
+Topping.create(name: 'Peppers')
+Topping.create(name: 'Parma Ham')
+Topping.create(name: 'Extra cheese')
 
 
 marinara = Pizza.create!(name: 'Marinara', description: 'Tomatoes, garlic, oregano, and extra virgin olive oil. No cheese.', price: '4')

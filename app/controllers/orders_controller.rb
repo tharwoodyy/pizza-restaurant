@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @pizza = Pizza.find(params[:pizza_id])
+    # @topping = Topping.find(params[:topping_id])
 
     # redirect_to pizza_path(@pizza) if @pizza.user == current_user
   end
@@ -21,6 +22,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @pizza = Pizza.find(params[:pizza_id])
+    # @topping = Topping.find(params[:topping_id])
     @order.pizza = @pizza
     @order.user = current_user
     if @order.save!

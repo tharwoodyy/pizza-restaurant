@@ -12,6 +12,7 @@
             <h2><%= order.pizza.name %></h2>
             <p>Quantity: <%= order.quantity %></p>
             <p>Price: £<%= order.pizza.price %></p>
+            <!-- <p>Extra Toppings: <%= order.pizza.toppings %></p> -->
             <%= link_to order_path(order), method: :delete, data: { confirm: 'Are you sure?' } do %>
               <i class="far fa-trash-alt"></i>
             <% end %>

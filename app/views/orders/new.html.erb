@@ -3,6 +3,7 @@
 
   <%= simple_form_for [@pizza, @order] do |f| %>
   <%= f.input :quantity, html5: true %>
+  <%#= f.input :topping, :collection => %w[ Pepperoni Chillies Peppers Parma Ham Extra Cheese ] %>
   <%= f.submit "Order" %>
   <% end %>
 </div>
