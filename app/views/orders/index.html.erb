@@ -23,7 +23,7 @@
     <div class="totals">
       <h3>Total Quantity: <%= @orders.map { |order| 1 * order.quantity }.sum %> </h3>
       <h3>Total Price: £<%= @orders.map { |order | 1 * order.pizza.price.to_i }.sum %> </h3>
-      <%= link_to "Place Order", "#", class: "btn btn-dark" %>
+      <%= link_to "Place Order", "#", class: "btn btn-dark", data: { confirm: 'Thank you!'} %>
     </div>
     <div class="links">
       <%= link_to 'Back', pizzas_path, class: "btn btn-dark" %>
