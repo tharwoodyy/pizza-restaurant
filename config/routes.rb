@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   end
   resources :orders
 
+  resources :merches
+
   root to: 'pages#home'
 
 end
