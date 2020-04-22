@@ -8,6 +8,7 @@
 
 Pizza.destroy_all
 Topping.destroy_all
+Merch.destroy_all
 User.destroy_all
 
 user = User.create!(email: 'tom@gmail.com', password: 'test1234')
@@ -18,6 +19,25 @@ Topping.create(name: 'Peppers')
 Topping.create(name: 'Parma Ham')
 Topping.create(name: 'Extra cheese')
 
+t_shirt = Merch.create!(name: 'T-Shirts', price: '10')
+url_t_shirt = "https://images.pexels.com/photos/2294342/pexels-photo-2294342.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+t_shirt.photo.attach(io: open(url_t_shirt), filename: 't_shirt')
+
+caps = Merch.create!(name: 'Caps', price: '8')
+url_caps = "https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+caps.photo.attach(io: open(url_caps), filename: 'caps')
+
+ingredients = Merch.create!(name: 'Ingredients', price: '4')
+url_ingredients = "https://images.pexels.com/photos/1813504/pexels-photo-1813504.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+ingredients.photo.attach(io: open(url_ingredients), filename: 'ingredients')
+
+beers = Merch.create!(name: 'Beers', price: '3')
+url_beers = "https://images.pexels.com/photos/2410165/pexels-photo-2410165.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+beers.photo.attach(io: open(url_beers), filename: 'beers')
+
+wines = Merch.create!(name: 'Wines', price: '8')
+url_wines = "https://images.pexels.com/photos/2664150/pexels-photo-2664150.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+wines.photo.attach(io: open(url_wines), filename: 'wines')
 
 marinara = Pizza.create!(name: 'Marinara', description: 'Tomatoes, garlic, oregano, and extra virgin olive oil. No cheese.', price: '4')
 url_marinara = "https://images.pexels.com/photos/3343621/pexels-photo-3343621.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"

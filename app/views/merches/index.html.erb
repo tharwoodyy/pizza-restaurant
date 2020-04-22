@@ -3,6 +3,22 @@
   <h4>All made using organic materials</h4>
 </div>
 
+<div class="container">
+  <div class="pizza-grid">
+    <% @merch.each do |merch| %>
+      <% if merch.photo.attached? %>
+        <%= link_to merch_path(merch), class: 'pizza-card', style:"text-decoration: none;" do %>
+          <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path merch.photo.key, height: 300, width: 400, crop: :fill %>')">
+            <div class="card-list">
+              <li><%= merch.name %></li>
+              <li>£<%= merch.price %></li>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 <div class="links">
   <%= link_to 'Back', root_path, class: "btn btn-dark" %>
