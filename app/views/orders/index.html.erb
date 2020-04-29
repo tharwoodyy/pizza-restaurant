@@ -12,11 +12,18 @@
             <h2><%= order.pizza.name %></h2>
             <p>Quantity: <%= order.quantity %></p>
             <p>Price: £<%= order.pizza.price %></p>
+            <label>Extra Topping</label>
+             <select id = "myList">
+               <option value = "1">Cheese</option>
+               <option value = "2">Pepporoni</option>
+               <option value = "3">Chicken</option>
+               <option value = "4">Veg</option>
+             </select>
             <!-- <p>Extra Toppings: <%= order.pizza.toppings %></p> -->
-            <%= link_to order_path(order), method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
           </div>
+          <%= link_to order_path(order), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
         </li>
       <% end %>
     </ul>
