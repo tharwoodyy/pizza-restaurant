@@ -6,7 +6,7 @@
   <div class="order-container">
     <ul class="pizza-grid">
       <% @orders.each do |order| %>
-        <li class="pizza-card">
+        <li class="pizza-card-order">
           <img <%= image_tag order.pizza.photo, class: "card-img" %>
           <div class="card-product-infos">
             <h2><%= order.pizza.name %></h2>
@@ -14,10 +14,11 @@
             <p>Price: £<%= order.pizza.price %></p>
             <label>Extra Topping</label>
              <select id = "myList">
-               <option value = "1">Cheese</option>
-               <option value = "2">Pepporoni</option>
-               <option value = "3">Chicken</option>
-               <option value = "4">Veg</option>
+               <option value = "1">n/a</option>
+               <option value = "2">Cheese</option>
+               <option value = "3">Pepperoni</option>
+               <option value = "4">Chicken</option>
+               <option value = "5">Veg</option>
              </select>
             <!-- <p>Extra Toppings: <%= order.pizza.toppings %></p> -->
           </div>
