@@ -1,6 +1,8 @@
-<div class="container">
+<div class="index-banner">
   <h1>Order this Pizza</h1>
+</div>
 
+<div class="container">
   <%= simple_form_for [@pizza, @order] do |f| %>
   <%= f.input :quantity, html5: true %>
   <%#= f.input :topping, :collection => %w[ Pepperoni Chillies Peppers Parma Ham Extra Cheese ] %>
